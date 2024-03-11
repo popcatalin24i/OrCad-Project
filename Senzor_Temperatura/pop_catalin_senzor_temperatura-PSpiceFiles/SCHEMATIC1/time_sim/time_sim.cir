@@ -1,0 +1,21 @@
+** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperatura-pspicefiles\schematic1\time_sim.sim ] 
+
+** Creating circuit file "time_sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../led_portocaliu.lib" 
+* From [PSPICE NETLIST] section of D:\OrCAD\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 5s 0 5m 
+.TEMP -70 -50 -30 -10 20 50 100 150
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

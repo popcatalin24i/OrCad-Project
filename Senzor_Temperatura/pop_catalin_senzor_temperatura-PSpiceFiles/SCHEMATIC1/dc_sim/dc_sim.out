@@ -1,0 +1,282 @@
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "dc_sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../led_portocaliu.lib" 
+* From [PSPICE NETLIST] section of D:\OrCAD\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM r 20k 35k 1k 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source POP_CATALIN_SENZOR_TEMPERATURA
+X_U1         N00093 N00093 0 2N7000
+X_U2         N01344 N00093 0 2N7000
+R_Rref         N00093 VCC R_Rref 39k TC=0,0 
+.model        R_Rref RES R=1 DEV=5% TC1=0 TC2=0
+R_RS         N01344 VCC  {r} TC=0,0 
+X_U3         N01002 N01032 VCC 0 N01097 LM741
+R_R3         N01606 N01002 R_R3 1.27k TC=0,0 
+.model        R_R3 RES R=1 DEV=1% TC1=0 TC2=0
+R_R4         N01002 0 R_R4 4.99k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+R_R1         VREF N01032 R_R1 1.27k TC=0,0 
+.model        R_R1 RES R=1 DEV=1% TC1=0 TC2=0
+R_R2         N01032 N01097 R_R2 4.99k TC=0,0 
+.model        R_R2 RES R=1 DEV=1% TC1=0 TC2=0
+V_V1         VCC 0 16V
+X_U4         N01344 N01606 VCC 0 N01606 LM741
+R_R7         N02189 N02201 R_R7 22k TC=0,0 
+.model        R_R7 RES R=1 DEV=5% TC1=0 TC2=0
+R_R6         VCMD N02189 R_R6 10k TC=0,0 
+.model        R_R6 RES R=1 DEV=5% TC1=0 TC2=0
+R_R8         0 N022410 R_R8 1k TC=0,0 
+.model        R_R8 RES R=1 DEV=1% TC1=0 TC2=0
+R_R9         N02466 VCC R_R9 10k TC=0,0 
+.model        R_R9 RES R=1 DEV=5% TC1=0 TC2=0
+R_R10         N03573 VCC R_R10 20k TC=0,0 
+.model        R_R10 RES R=1 DEV=5% TC1=0 TC2=0
+R_R11         0 N03573 R_R11 10k TC=0,0 
+.model        R_R11 RES R=1 DEV=5% TC1=0 TC2=0
+X_U6         N03573 VREF VCC 0 VREF LM741
+R_R12         N04415 VCC R_R12 24k TC=0,0 
+.model        R_R12 RES R=1 DEV=5% TC1=0 TC2=0
+X_U7         N04415 VCMD VCC 0 VCMD LM741
+R_R13         0 N04415 R_R13 10k TC=0,0 
+.model        R_R13 RES R=1 DEV=5% TC1=0 TC2=0
+R_R5         N01097 N07237 R_R5 10k TC=0,0 
+.model        R_R5 RES R=1 DEV=5% TC1=0 TC2=0
+X_U9         N02466 N02201 0 2N7000
+X_U10         N02189 N07237 VCC 0 N02201 LM741
+D_D1         N02201 N022410 led_portocaliu 
+.PARAM  r=20k
+
+**** RESUMING dc_sim.cir ****
+.END
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               led_portocaliu  X_U1.DBD        X_U2.DBD        X_U9.DBD        
+          IS   10.159000E-21   48.116150E-15   48.116150E-15   48.116150E-15 
+           N    1.0904                                                       
+          BV                   75              75              75            
+         IBV                   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    8.6867          1.000000E-06    1.000000E-06    1.000000E-06 
+          TT                   30.000000E-09   30.000000E-09   30.000000E-09 
+         CJO                   16.940000E-12   16.940000E-12   16.940000E-12 
+          VJ                     .5              .5              .5          
+           M                     .2              .2              .2          
+
+
+               X_U3.x_lm741.dx X_U3.x_lm741.dy X_U4.x_lm741.dx X_U4.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U6.x_lm741.dx X_U6.x_lm741.dy X_U7.x_lm741.dx X_U7.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U10.x_lm741.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+               X_U10.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.x_lm741.qx X_U4.x_lm741.qx X_U6.x_lm741.qx X_U7.x_lm741.qx 
+               NPN             NPN             NPN             NPN             
+       LEVEL    1               1               1               1            
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75           93.75         
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.42            2.42            2.42         
+           D     .87             .87             .87             .87         
+
+
+               X_U10.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.MINT       X_U2.MINT       X_U9.MINT       
+               NMOS            NMOS            NMOS            
+       LEVEL    3               3               3            
+           L  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    2.148821        2.148821        2.148821     
+          KP     .5106           .5106           .5106       
+       GAMMA    0               0               0            
+         PHI     .6              .6              .6          
+      LAMBDA    0               0               0            
+          IS    1.000000E-24    1.000000E-24    1.000000E-24 
+          JS    0               0               0            
+          PB     .8              .8              .8          
+        PBSW     .8              .8              .8          
+          CJ    0               0               0            
+        CJSW    0               0               0            
+        CGSO    0               0               0            
+        CGDO    0               0               0            
+        CGBO    0               0               0            
+         TOX  100.000000E-09  100.000000E-09  100.000000E-09 
+          XJ    0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03 
+        VMAX    1.000000E+03    1.000000E+03    1.000000E+03 
+         ETA    0               0               0            
+      DIOMOD    1               1               1            
+         VFB    0               0               0            
+        LETA    0               0               0            
+        WETA    0               0               0            
+          U0  600             600             600            
+        TEMP    0               0               0            
+         VDD    5               5               5            
+       XPART    0               0               0            
+
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_Rref          R_R3            R_R4            R_R1            
+           R    1               1               1               1            
+
+
+               R_R2            R_R7            R_R6            R_R8            
+           R    1               1               1               1            
+
+
+               R_R9            R_R10           R_R11           R_R12           
+           R    1               1               1               1            
+
+
+               R_R13           R_R5            
+           R    1               1            
+
+
+
+          JOB CONCLUDED
+
+**** 05/21/23 17:32:55 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-dc_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temperat
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .06
+

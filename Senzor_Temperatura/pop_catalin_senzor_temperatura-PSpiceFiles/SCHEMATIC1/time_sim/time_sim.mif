@@ -1,0 +1,4 @@
+ lib=C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\led_portocaliu.lib, offset=1347, size=65
+ lib="D:\OrCAD\OrCAD Installation\tools\pspice\library\nxp_mosfets.lib", offset=77670, size=2016
+ lib="D:\OrCAD\OrCAD Installation\tools\pspice\library\opamp.lib", offset=58704, size=430
+ lib="D:\OrCAD\OrCAD Installation\tools\pspice\library\opamp.lib", offset=101320, size=1093

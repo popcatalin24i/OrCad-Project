@@ -1,0 +1,41 @@
+* source POP_CATALIN_SENZOR_TEMPERATURA
+X_U1         N00093 N00093 0 2N7000
+X_U2         N01344 N00093 0 2N7000
+R_Rref         N00093 VCC R_Rref 39k TC=0,0 
+.model        R_Rref RES R=1 DEV=5% TC1=0 TC2=0
+R_RS         N01344 VCC  {r} TC=0,0 
+X_U3         N01002 N01032 VCC 0 N01097 LM741
+R_R3         N01606 N01002 R_R3 1.27k TC=0,0 
+.model        R_R3 RES R=1 DEV=1% TC1=0 TC2=0
+R_R4         N01002 0 R_R4 4.99k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+R_R1         VREF N01032 R_R1 1.27k TC=0,0 
+.model        R_R1 RES R=1 DEV=1% TC1=0 TC2=0
+R_R2         N01032 N01097 R_R2 4.99k TC=0,0 
+.model        R_R2 RES R=1 DEV=1% TC1=0 TC2=0
+V_V1         VCC 0 16V
+X_U4         N01344 N01606 VCC 0 N01606 LM741
+R_R7         N02189 OUT R_R7 24k TC=0,0 
+.model        R_R7 RES R=1 DEV=5% TC1=0 TC2=0
+R_R6         VCMD N02189 R_R6 13k TC=0,0 
+.model        R_R6 RES R=1 DEV=5% TC1=0 TC2=0
+R_R8         0 N022410 R_R8 1k TC=0,0 
+.model        R_R8 RES R=1 DEV=1% TC1=0 TC2=0
+R_R9         N02466 VCC R_R9 10k TC=0,0 
+.model        R_R9 RES R=1 DEV=5% TC1=0 TC2=0
+R_R10         N03573 VCC R_R10 20k TC=0,0 
+.model        R_R10 RES R=1 DEV=5% TC1=0 TC2=0
+R_R11         0 N03573 R_R11 10k TC=0,0 
+.model        R_R11 RES R=1 DEV=5% TC1=0 TC2=0
+X_U6         N03573 VREF VCC 0 VREF LM741
+R_R12         N04415 VCC R_R12 22k TC=0,0 
+.model        R_R12 RES R=1 DEV=5% TC1=0 TC2=0
+X_U7         N04415 VCMD VCC 0 VCMD LM741
+R_R13         0 N04415 R_R13 10k TC=0,0 
+.model        R_R13 RES R=1 DEV=5% TC1=0 TC2=0
+R_R5         N01097 N07237 R_R5 13k TC=0,0 
+.model        R_R5 RES R=1 DEV=5% TC1=0 TC2=0
+X_U9         N02466 OUT 0 2N7000
+X_U10         N02189 N07237 VCC 0 OUT LM741
+D_D1         OUT N022410 led_portocaliu 
+.PARAM  r=29k

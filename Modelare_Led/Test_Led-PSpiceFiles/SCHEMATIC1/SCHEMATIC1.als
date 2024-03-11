@@ -1,0 +1,4 @@
+.ALIASES
+V_V1            V1(+=N00067 -=0 ) CN @TEST_LED.SCHEMATIC1(sch_1):INS26@SOURCE.VDC.Normal(chips)
+D_D1            D1(1=N00067 2=0 ) CN @TEST_LED.SCHEMATIC1(sch_1):INS51@BREAKOUT.Dbreak.Normal(chips)
+.ENDALIASES

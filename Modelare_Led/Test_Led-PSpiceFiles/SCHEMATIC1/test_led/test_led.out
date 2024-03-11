@@ -1,0 +1,76 @@
+
+**** 05/22/23 00:51:46 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test_led"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Modelare_Led\test_led-pspicefiles\schematic1
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test_led.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../led_portocaliu.lib" 
+* From [PSPICE NETLIST] section of D:\OrCAD\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 1 2.5 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST_LED
+V_V1         N00067 0 1V
+D_D1         N00067 0 led_portocaliu 
+
+**** RESUMING test_led.cir ****
+.END
+
+**** 05/22/23 00:51:46 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test_led"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Modelare_Led\test_led-pspicefiles\schematic1
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               led_portocaliu  
+          IS   10.159000E-21 
+           N    1.0904       
+          RS    8.6867       
+
+
+
+          JOB CONCLUDED
+
+**** 05/22/23 00:51:46 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test_led"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Modelare_Led\test_led-pspicefiles\schematic1
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

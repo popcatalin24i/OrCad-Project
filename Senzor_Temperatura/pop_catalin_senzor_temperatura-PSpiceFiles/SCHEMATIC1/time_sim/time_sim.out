@@ -1,0 +1,3000 @@
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "time_sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../led_portocaliu.lib" 
+* From [PSPICE NETLIST] section of D:\OrCAD\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 5s 0 5m 
+.TEMP -70 -50 -30 -10 20 50 100 150
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source POP_CATALIN_SENZOR_TEMPERATURA
+X_U1         N00093 N00093 0 2N7000
+X_U2         N01344 N00093 0 2N7000
+R_Rref         N00093 VCC R_Rref 39k TC=0,0 
+.model        R_Rref RES R=1 DEV=5% TC1=0 TC2=0
+R_RS         N01344 VCC  {r} TC=0,0 
+X_U3         N01002 N01032 VCC 0 N01097 LM741
+R_R3         N01606 N01002 R_R3 1.27k TC=0,0 
+.model        R_R3 RES R=1 DEV=1% TC1=0 TC2=0
+R_R4         N01002 0 R_R4 4.99k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+R_R1         VREF N01032 R_R1 1.27k TC=0,0 
+.model        R_R1 RES R=1 DEV=1% TC1=0 TC2=0
+R_R2         N01032 N01097 R_R2 4.99k TC=0,0 
+.model        R_R2 RES R=1 DEV=1% TC1=0 TC2=0
+V_V1         VCC 0 16V
+X_U4         N01344 N01606 VCC 0 N01606 LM741
+R_R7         N02189 OUT R_R7 24k TC=0,0 
+.model        R_R7 RES R=1 DEV=5% TC1=0 TC2=0
+R_R6         VCMD N02189 R_R6 13k TC=0,0 
+.model        R_R6 RES R=1 DEV=5% TC1=0 TC2=0
+R_R8         0 N022410 R_R8 1k TC=0,0 
+.model        R_R8 RES R=1 DEV=1% TC1=0 TC2=0
+R_R9         N02466 VCC R_R9 10k TC=0,0 
+.model        R_R9 RES R=1 DEV=5% TC1=0 TC2=0
+R_R10         N03573 VCC R_R10 20k TC=0,0 
+.model        R_R10 RES R=1 DEV=5% TC1=0 TC2=0
+R_R11         0 N03573 R_R11 10k TC=0,0 
+.model        R_R11 RES R=1 DEV=5% TC1=0 TC2=0
+X_U6         N03573 VREF VCC 0 VREF LM741
+R_R12         N04415 VCC R_R12 22k TC=0,0 
+.model        R_R12 RES R=1 DEV=5% TC1=0 TC2=0
+X_U7         N04415 VCMD VCC 0 VCMD LM741
+R_R13         0 N04415 R_R13 10k TC=0,0 
+.model        R_R13 RES R=1 DEV=5% TC1=0 TC2=0
+R_R5         N01097 N07237 R_R5 13k TC=0,0 
+.model        R_R5 RES R=1 DEV=5% TC1=0 TC2=0
+X_U9         N02466 OUT 0 2N7000
+X_U10         N02189 N07237 VCC 0 OUT LM741
+D_D1         OUT N022410 led_portocaliu 
+.PARAM  r=29k
+
+**** RESUMING time_sim.cir ****
+.END
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               led_portocaliu  X_U1.DBD        X_U2.DBD        X_U9.DBD        
+          IS   10.159000E-21   48.116150E-15   48.116150E-15   48.116150E-15 
+           N    1.0904                                                       
+          BV                   75              75              75            
+         IBV                   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    8.6867          1.000000E-06    1.000000E-06    1.000000E-06 
+          TT                   30.000000E-09   30.000000E-09   30.000000E-09 
+         CJO                   16.940000E-12   16.940000E-12   16.940000E-12 
+          VJ                     .5              .5              .5          
+           M                     .2              .2              .2          
+
+
+               X_U3.x_lm741.dx X_U3.x_lm741.dy X_U4.x_lm741.dx X_U4.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U6.x_lm741.dx X_U6.x_lm741.dy X_U7.x_lm741.dx X_U7.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U10.x_lm741.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+               X_U10.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.x_lm741.qx X_U4.x_lm741.qx X_U6.x_lm741.qx X_U7.x_lm741.qx 
+               NPN             NPN             NPN             NPN             
+       LEVEL    1               1               1               1            
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75           93.75         
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.42            2.42            2.42         
+           D     .87             .87             .87             .87         
+
+
+               X_U10.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.MINT       X_U2.MINT       X_U9.MINT       
+               NMOS            NMOS            NMOS            
+       LEVEL    3               3               3            
+           L  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    2.148821        2.148821        2.148821     
+          KP     .5106           .5106           .5106       
+       GAMMA    0               0               0            
+         PHI     .6              .6              .6          
+      LAMBDA    0               0               0            
+          IS    1.000000E-24    1.000000E-24    1.000000E-24 
+          JS    0               0               0            
+          PB     .8              .8              .8          
+        PBSW     .8              .8              .8          
+          CJ    0               0               0            
+        CJSW    0               0               0            
+        CGSO    0               0               0            
+        CGDO    0               0               0            
+        CGBO    0               0               0            
+         TOX  100.000000E-09  100.000000E-09  100.000000E-09 
+          XJ    0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03 
+        VMAX    1.000000E+03    1.000000E+03    1.000000E+03 
+         ETA    0               0               0            
+      DIOMOD    1               1               1            
+         VFB    0               0               0            
+        LETA    0               0               0            
+        WETA    0               0               0            
+          U0  600             600             600            
+        TEMP    0               0               0            
+         VDD    5               5               5            
+       XPART    0               0               0            
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_Rref          R_R3            R_R4            R_R1            
+           R    1               1               1               1            
+
+
+               R_R2            R_R7            R_R6            R_R8            
+           R    1               1               1               1            
+
+
+               R_R9            R_R10           R_R11           R_R12           
+           R    1               1               1               1            
+
+
+               R_R13           R_R5            
+           R    1               1            
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -70.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        2.392E-29      1.881E-23      1.881E-23  
+         VJ        1.081E+00      7.421E-01      7.421E-01  
+        CJO        0.000E+00      1.517E-11      1.517E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        1.881E-23      3.127E-25      3.127E-25  
+         VJ        7.421E-01      1.081E+00      1.081E+00  
+        CJO        1.517E-11      9.403E-12      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        3.127E-25      3.127E-25      3.127E-25  
+         VJ        1.081E+00      1.081E+00      1.081E+00  
+        CJO        9.403E-12      0.000E+00      9.403E-12  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        3.127E-25      3.127E-25      3.127E-25  
+         VJ        1.081E+00      1.081E+00      1.081E+00  
+        CJO        0.000E+00      9.403E-12      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        3.127E-25      3.127E-25  
+         VJ        1.081E+00      1.081E+00  
+        CJO        9.403E-12      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.242E+00      2.242E+00      2.242E+00  
+        PHI        8.098E-01      8.098E-01      8.098E-01  
+         PB        9.451E-01      9.451E-01      9.451E-01  
+     IS(JS)        0.000E+00      0.000E+00      0.000E+00  
+         KP        9.170E-01      9.170E-01      9.170E-01  
+         UO        1.078E+03      1.078E+03      1.078E+03  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        9.113E-01      9.113E-01      9.113E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        9.113E-01      9.113E-01      9.113E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        3.127E-25      3.127E-25      3.127E-25  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        9.113E-01      9.113E-01      9.113E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        9.113E-01      9.113E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        9.113E-01      9.113E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        3.127E-25      3.127E-25  
+        ISS        0.000E+00      0.000E+00  
+        VJS        9.113E-01      9.113E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      2.808E+10  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        9.123E-01      1.949E-01      2.808E+10  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        9.123E-01      1.949E-01      2.808E+10  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        9.123E-01      1.949E-01  
+
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  -70.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.9240  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093)    2.2704 (N01002)    4.6138 (N01032)    4.6139 (N01097)    1.7893     
+
+(N01344)    5.7880 (N01606)    5.7881 (N02189)    8.8365 (N02466)     .0016     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)    1.7893 (X_U1.1)    2.2704     
+
+(X_U1.2)    2.2704 (X_U1.3)    2.2701 (X_U1.4)    2.2704 (X_U1.5)    2.2704     
+
+(X_U1.6) 2.464E-06 (X_U1.7) 2.429E-06 (X_U1.8)    0.0000 (X_U1.9)    2.2704     
+
+(X_U2.1)    2.2704 (X_U2.2)    2.2704 (X_U2.3)    5.7877 (X_U2.4)    5.7880     
+
+(X_U2.5)    5.7880 (X_U2.6) 2.464E-06 (X_U2.7) 2.429E-06 (X_U2.8)    0.0000     
+
+(X_U2.9)    5.7880 (X_U9.1)   15.9240 (X_U9.2)   15.9240 (X_U9.3) 138.7E-06     
+
+(X_U9.4)     .0016 (X_U9.5)     .0016 (X_U9.6) 11.20E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9)     .0016 (N022410)   14.6200                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-321.3E-06                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12)    3.5173                   (X_U2.13)   11.2800                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.9240                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6) 593.5E-06                
+
+(X_U3.x_lm741.7)    1.7610            (X_U3.x_lm741.8)    1.7610                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6) 195.2E-06                
+
+(X_U4.x_lm741.7)    5.8344            (X_U4.x_lm741.8)    5.8344                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 243.3E-06                
+
+(X_U6.x_lm741.7)    5.3612            (X_U6.x_lm741.8)    5.3612                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9848            (X_U7.x_lm741.8)    4.9848                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5001               
+
+(X_U10.x_lm741.7)   17.9630           (X_U10.x_lm741.8)   17.9630               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.8194               
+
+(X_U3.x_lm741.11)   15.9610           (X_U3.x_lm741.12)   15.9610               
+
+(X_U3.x_lm741.13)    3.8331           (X_U3.x_lm741.14)    3.8330               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)    -.5661           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    4.9935           (X_U4.x_lm741.11)   15.9610               
+
+(X_U4.x_lm741.12)   15.9610           (X_U4.x_lm741.13)    5.0072               
+
+(X_U4.x_lm741.14)    5.0072           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)     .9248               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.5383               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.5520           (X_U6.x_lm741.14)    4.5520               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .5662           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.2050           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.2187               
+
+(X_U7.x_lm741.14)    4.2187           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2951               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.0153              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.0153          (X_U10.x_lm741.14)    8.0432              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.7910          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.806E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   5.935E-09
+    X_U3.x_lm741.vc   1.321E-11
+    X_U3.x_lm741.ve   6.524E-13
+    X_U3.x_lm741.vlim  -5.661E-04
+    X_U3.x_lm741.vlp  -4.057E-11
+    X_U3.x_lm741.vln  -3.944E-11
+    X_U4.x_lm741.vb   1.952E-09
+    X_U4.x_lm741.vc   9.212E-12
+    X_U4.x_lm741.ve   4.651E-12
+    X_U4.x_lm741.vlim   9.248E-04
+    X_U4.x_lm741.vlp  -3.908E-11
+    X_U4.x_lm741.vln  -4.093E-11
+    X_U6.x_lm741.vb   2.433E-09
+    X_U6.x_lm741.vc   9.667E-12
+    X_U6.x_lm741.ve   4.196E-12
+    X_U6.x_lm741.vlim   5.662E-04
+    X_U6.x_lm741.vlp  -3.943E-11
+    X_U6.x_lm741.vln  -4.057E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.000E-11
+    X_U7.x_lm741.ve   3.863E-12
+    X_U7.x_lm741.vlim  -2.951E-04
+    X_U7.x_lm741.vlp  -4.030E-11
+    X_U7.x_lm741.vln  -3.971E-11
+    X_U10.x_lm741.vb  -1.500E-05
+    X_U10.x_lm741.vc  -2.588E-02
+    X_U10.x_lm741.ve   1.479E-11
+    X_U10.x_lm741.vlim   4.079E-02
+    X_U10.x_lm741.vlp   1.331E-05
+    X_U10.x_lm741.vln  -8.079E-11
+
+    TOTAL POWER DISSIPATION  -2.64E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        5.682E-27      7.323E-21      7.323E-21  
+         VJ        1.065E+00      6.935E-01      6.935E-01  
+        CJO        0.000E+00      1.552E-11      1.552E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        7.323E-21      1.218E-22      1.218E-22  
+         VJ        6.935E-01      1.065E+00      1.065E+00  
+        CJO        1.552E-11      9.520E-12      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        1.218E-22      1.218E-22      1.218E-22  
+         VJ        1.065E+00      1.065E+00      1.065E+00  
+        CJO        9.520E-12      0.000E+00      9.520E-12  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        1.218E-22      1.218E-22      1.218E-22  
+         VJ        1.065E+00      1.065E+00      1.065E+00  
+        CJO        0.000E+00      9.520E-12      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        1.218E-22      1.218E-22  
+         VJ        1.065E+00      1.065E+00  
+        CJO        9.520E-12      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.223E+00      2.223E+00      2.223E+00  
+        PHI        7.679E-01      7.679E-01      7.679E-01  
+         PB        9.166E-01      9.166E-01      9.166E-01  
+     IS(JS)        0.000E+00      0.000E+00      0.000E+00  
+         KP        7.965E-01      7.965E-01      7.965E-01  
+         UO        9.360E+02      9.360E+02      9.360E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        8.794E-01      8.794E-01      8.794E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        8.794E-01      8.794E-01      8.794E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        1.218E-22      1.218E-22      1.218E-22  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        8.794E-01      8.794E-01      8.794E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        8.794E-01      8.794E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        8.794E-01      8.794E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        1.218E-22      1.218E-22  
+        ISS        0.000E+00      0.000E+00  
+        VJS        8.794E-01      8.794E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      2.328E+10  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        9.644E-01      2.060E-01      2.328E+10  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        9.644E-01      2.060E-01      2.328E+10  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        9.644E-01      2.060E-01  
+
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  -50.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.9000  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093)    2.2536 (N01002)    4.6043 (N01032)    4.6044 (N01097)    1.7423     
+
+(N01344)    5.7761 (N01606)    5.7762 (N02189)    8.8281 (N02466)     .0017     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)    1.7423 (X_U1.1)    2.2536     
+
+(X_U1.2)    2.2536 (X_U1.3)    2.2533 (X_U1.4)    2.2536 (X_U1.5)    2.2536     
+
+(X_U1.6) 2.467E-06 (X_U1.7) 2.432E-06 (X_U1.8)    0.0000 (X_U1.9)    2.2536     
+
+(X_U2.1)    2.2536 (X_U2.2)    2.2536 (X_U2.3)    5.7758 (X_U2.4)    5.7761     
+
+(X_U2.5)    5.7761 (X_U2.6) 2.467E-06 (X_U2.7) 2.432E-06 (X_U2.8)    0.0000     
+
+(X_U2.9)    5.7761 (X_U9.1)   15.9000 (X_U9.2)   15.9000 (X_U9.3) 158.1E-06     
+
+(X_U9.4)     .0017 (X_U9.5)     .0017 (X_U9.6) 11.20E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)-1.694E-21 (X_U9.9)     .0017 (N022410)   14.5950                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-340.0E-06                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12)    3.5221                   (X_U2.13)   11.2750                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.9000                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6) 598.0E-06                
+
+(X_U3.x_lm741.7)    1.7137            (X_U3.x_lm741.8)    1.7137                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6) 196.4E-06                
+
+(X_U4.x_lm741.7)    5.8223            (X_U4.x_lm741.8)    5.8223                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 243.2E-06                
+
+(X_U6.x_lm741.7)    5.3616            (X_U6.x_lm741.8)    5.3616                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9849            (X_U7.x_lm741.8)    4.9849                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5003               
+
+(X_U10.x_lm741.7)   17.9380           (X_U10.x_lm741.8)   17.9380               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.8477               
+
+(X_U3.x_lm741.11)   15.9610           (X_U3.x_lm741.12)   15.9610               
+
+(X_U3.x_lm741.13)    3.8614           (X_U3.x_lm741.14)    3.8613               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)    -.5736           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    5.0193           (X_U4.x_lm741.11)   15.9610               
+
+(X_U4.x_lm741.12)   15.9610           (X_U4.x_lm741.13)    5.0331               
+
+(X_U4.x_lm741.14)    5.0330           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)     .9229               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.5761               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.5898           (X_U6.x_lm741.14)    4.5898               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .5737           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.2428           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.2565               
+
+(X_U7.x_lm741.14)    4.2565           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2944               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.0436              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.0436          (X_U10.x_lm741.14)    8.0714              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.7540          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.805E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   5.980E-09
+    X_U3.x_lm741.vc   1.326E-11
+    X_U3.x_lm741.ve   6.055E-13
+    X_U3.x_lm741.vlim  -5.736E-04
+    X_U3.x_lm741.vlp  -4.057E-11
+    X_U3.x_lm741.vln  -3.943E-11
+    X_U4.x_lm741.vb   1.964E-09
+    X_U4.x_lm741.vc   9.224E-12
+    X_U4.x_lm741.ve   4.639E-12
+    X_U4.x_lm741.vlim   9.229E-04
+    X_U4.x_lm741.vlp  -3.908E-11
+    X_U4.x_lm741.vln  -4.093E-11
+    X_U6.x_lm741.vb   2.432E-09
+    X_U6.x_lm741.vc   9.667E-12
+    X_U6.x_lm741.ve   4.196E-12
+    X_U6.x_lm741.vlim   5.737E-04
+    X_U6.x_lm741.vlp  -3.943E-11
+    X_U6.x_lm741.vln  -4.058E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.000E-11
+    X_U7.x_lm741.ve   3.863E-12
+    X_U7.x_lm741.vlim  -2.944E-04
+    X_U7.x_lm741.vlp  -4.029E-11
+    X_U7.x_lm741.vln  -3.971E-11
+    X_U10.x_lm741.vb  -1.500E-05
+    X_U10.x_lm741.vc  -2.587E-02
+    X_U10.x_lm741.ve   1.476E-11
+    X_U10.x_lm741.vlim   4.075E-02
+    X_U10.x_lm741.vlp   1.332E-05
+    X_U10.x_lm741.vln  -8.076E-11
+
+    TOTAL POWER DISSIPATION  -2.63E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -30.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        5.600E-25      1.093E-18      1.093E-18  
+         VJ        1.049E+00      6.442E-01      6.442E-01  
+        CJO        0.000E+00      1.589E-11      1.589E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        1.093E-18      1.817E-20      1.817E-20  
+         VJ        6.442E-01      1.049E+00      1.049E+00  
+        CJO        1.589E-11      9.640E-12      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        1.817E-20      1.817E-20      1.817E-20  
+         VJ        1.049E+00      1.049E+00      1.049E+00  
+        CJO        9.640E-12      0.000E+00      9.640E-12  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        1.817E-20      1.817E-20      1.817E-20  
+         VJ        1.049E+00      1.049E+00      1.049E+00  
+        CJO        0.000E+00      9.640E-12      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        1.817E-20      1.817E-20  
+         VJ        1.049E+00      1.049E+00  
+        CJO        9.640E-12      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.204E+00      2.204E+00      2.204E+00  
+        PHI        7.253E-01      7.253E-01      7.253E-01  
+         PB        8.873E-01      8.873E-01      8.873E-01  
+     IS(JS)        2.072E-29      2.072E-29      2.072E-29  
+         KP        7.003E-01      7.003E-01      7.003E-01  
+         UO        8.229E+02      8.229E+02      8.229E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        8.468E-01      8.468E-01      8.468E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        8.468E-01      8.468E-01      8.468E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        1.817E-20      1.817E-20      1.817E-20  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        8.468E-01      8.468E-01      8.468E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        8.468E-01      8.468E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        8.468E-01      8.468E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        1.817E-20      1.817E-20  
+        ISS        0.000E+00      0.000E+00  
+        VJS        8.468E-01      8.468E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      1.848E+10  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        1.036E+00      2.212E-01      1.848E+10  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        1.036E+00      2.212E-01      1.848E+10  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        1.036E+00      2.212E-01  
+
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  -30.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.8760  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093)    2.2365 (N01002)    4.5941 (N01032)    4.5943 (N01097)    1.6925     
+
+(N01344)    5.7634 (N01606)    5.7635 (N02189)    8.8196 (N02466)     .0018     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)    1.6925 (X_U1.1)    2.2365     
+
+(X_U1.2)    2.2365 (X_U1.3)    2.2361 (X_U1.4)    2.2365 (X_U1.5)    2.2365     
+
+(X_U1.6) 2.470E-06 (X_U1.7) 2.435E-06 (X_U1.8)    0.0000 (X_U1.9)    2.2365     
+
+(X_U2.1)    2.2365 (X_U2.2)    2.2365 (X_U2.3)    5.7630 (X_U2.4)    5.7634     
+
+(X_U2.5)    5.7634 (X_U2.6) 2.470E-06 (X_U2.7) 2.435E-06 (X_U2.8)-423.5E-24     
+
+(X_U2.9)    5.7634 (X_U9.1)   15.8760 (X_U9.2)   15.8760 (X_U9.3) 178.3E-06     
+
+(X_U9.4)     .0018 (X_U9.5)     .0018 (X_U9.6) 11.20E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9)     .0018 (N022410)   14.5700                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-365.6E-06                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12)    3.5265                   (X_U2.13)   11.2700                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.8760                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6) 602.8E-06                
+
+(X_U3.x_lm741.7)    1.6634            (X_U3.x_lm741.8)    1.6634                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6) 197.6E-06                
+
+(X_U4.x_lm741.7)    5.8095            (X_U4.x_lm741.8)    5.8095                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 243.0E-06                
+
+(X_U6.x_lm741.7)    5.3620            (X_U6.x_lm741.8)    5.3620                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9849            (X_U7.x_lm741.8)    4.9849                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5005               
+
+(X_U10.x_lm741.7)   17.9120           (X_U10.x_lm741.8)   17.9120               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.8759               
+
+(X_U3.x_lm741.11)   15.9610           (X_U3.x_lm741.12)   15.9610               
+
+(X_U3.x_lm741.13)    3.8895           (X_U3.x_lm741.14)    3.8895               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)    -.5815           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    5.0449           (X_U4.x_lm741.11)   15.9610               
+
+(X_U4.x_lm741.12)   15.9610           (X_U4.x_lm741.13)    5.0586               
+
+(X_U4.x_lm741.14)    5.0586           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)     .9208               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.6144               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.6281           (X_U6.x_lm741.14)    4.6281               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .5817           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.2811           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.2948               
+
+(X_U7.x_lm741.14)    4.2948           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2938               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.0721              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.0721          (X_U10.x_lm741.14)    8.1000              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.7170          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.803E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   6.028E-09
+    X_U3.x_lm741.vc   1.331E-11
+    X_U3.x_lm741.ve   5.556E-13
+    X_U3.x_lm741.vlim  -5.815E-04
+    X_U3.x_lm741.vlp  -4.058E-11
+    X_U3.x_lm741.vln  -3.942E-11
+    X_U4.x_lm741.vb   1.976E-09
+    X_U4.x_lm741.vc   9.237E-12
+    X_U4.x_lm741.ve   4.627E-12
+    X_U4.x_lm741.vlim   9.208E-04
+    X_U4.x_lm741.vlp  -3.908E-11
+    X_U4.x_lm741.vln  -4.092E-11
+    X_U6.x_lm741.vb   2.430E-09
+    X_U6.x_lm741.vc   9.667E-12
+    X_U6.x_lm741.ve   4.196E-12
+    X_U6.x_lm741.vlim   5.817E-04
+    X_U6.x_lm741.vlp  -3.942E-11
+    X_U6.x_lm741.vln  -4.059E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.000E-11
+    X_U7.x_lm741.ve   3.863E-12
+    X_U7.x_lm741.vlim  -2.938E-04
+    X_U7.x_lm741.vlp  -4.029E-11
+    X_U7.x_lm741.vln  -3.971E-11
+    X_U10.x_lm741.vb  -1.500E-05
+    X_U10.x_lm741.vc  -2.585E-02
+    X_U10.x_lm741.ve   1.474E-11
+    X_U10.x_lm741.vlim   4.072E-02
+    X_U10.x_lm741.vlp   1.332E-05
+    X_U10.x_lm741.vln  -8.072E-11
+
+    TOTAL POWER DISSIPATION  -2.63E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -10.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        2.794E-23      7.767E-17      7.767E-17  
+         VJ        1.033E+00      5.942E-01      5.942E-01  
+        CJO        0.000E+00      1.625E-11      1.625E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        7.767E-17      1.291E-18      1.291E-18  
+         VJ        5.942E-01      1.033E+00      1.033E+00  
+        CJO        1.625E-11      9.763E-12      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        1.291E-18      1.291E-18      1.291E-18  
+         VJ        1.033E+00      1.033E+00      1.033E+00  
+        CJO        9.763E-12      0.000E+00      9.763E-12  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        1.291E-18      1.291E-18      1.291E-18  
+         VJ        1.033E+00      1.033E+00      1.033E+00  
+        CJO        0.000E+00      9.763E-12      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        1.291E-18      1.291E-18  
+         VJ        1.033E+00      1.033E+00  
+        CJO        9.763E-12      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.185E+00      2.185E+00      2.185E+00  
+        PHI        6.819E-01      6.819E-01      6.819E-01  
+         PB        8.573E-01      8.573E-01      8.573E-01  
+     IS(JS)        1.535E-27      1.535E-27      1.535E-27  
+         KP        6.220E-01      6.220E-01      6.220E-01  
+         UO        7.309E+02      7.309E+02      7.309E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        8.134E-01      8.134E-01      8.134E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        8.134E-01      8.134E-01      8.134E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        1.291E-18      1.291E-18      1.291E-18  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        8.134E-01      8.134E-01      8.134E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        8.134E-01      8.134E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        8.134E-01      8.134E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        1.291E-18      1.291E-18  
+        ISS        0.000E+00      0.000E+00  
+        VJS        8.134E-01      8.134E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      1.368E+10  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        1.126E+00      2.405E-01      1.368E+10  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        1.126E+00      2.405E-01      1.368E+10  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        1.126E+00      2.405E-01  
+
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  -10.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.8510  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093)    2.2192 (N01002)    4.5839 (N01032)    4.5840 (N01097)    1.6419     
+
+(N01344)    5.7505 (N01606)    5.7506 (N02189)    8.8110 (N02466)     .0020     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)    1.6419 (X_U1.1)    2.2192     
+
+(X_U1.2)    2.2192 (X_U1.3)    2.2188 (X_U1.4)    2.2192 (X_U1.5)    2.2192     
+
+(X_U1.6) 2.473E-06 (X_U1.7) 2.438E-06 (X_U1.8)    0.0000 (X_U1.9)    2.2192     
+
+(X_U2.1)    2.2192 (X_U2.2)    2.2192 (X_U2.3)    5.7501 (X_U2.4)    5.7505     
+
+(X_U2.5)    5.7505 (X_U2.6) 2.473E-06 (X_U2.7) 2.438E-06 (X_U2.8)    0.0000     
+
+(X_U2.9)    5.7505 (X_U9.1)   15.8510 (X_U9.2)   15.8510 (X_U9.3) 199.4E-06     
+
+(X_U9.4)     .0020 (X_U9.5)     .0020 (X_U9.6) 11.20E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9)     .0020 (N022410)   14.5450                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-397.9E-06                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12)    3.5309                   (X_U2.13)   11.2650                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.8510                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6) 607.7E-06                
+
+(X_U3.x_lm741.7)    1.6124            (X_U3.x_lm741.8)    1.6124                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6) 198.8E-06                
+
+(X_U4.x_lm741.7)    5.7965            (X_U4.x_lm741.8)    5.7965                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 242.9E-06                
+
+(X_U6.x_lm741.7)    5.3624            (X_U6.x_lm741.8)    5.3624                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9849            (X_U7.x_lm741.8)    4.9849                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5007               
+
+(X_U10.x_lm741.7)   17.8850           (X_U10.x_lm741.8)   17.8850               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.9043               
+
+(X_U3.x_lm741.11)   15.9610           (X_U3.x_lm741.12)   15.9610               
+
+(X_U3.x_lm741.13)    3.9180           (X_U3.x_lm741.14)    3.9179               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)    -.5896           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    5.0707           (X_U4.x_lm741.11)   15.9610               
+
+(X_U4.x_lm741.12)   15.9610           (X_U4.x_lm741.13)    5.0844               
+
+(X_U4.x_lm741.14)    5.0844           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)     .9188               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.6531               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.6668           (X_U6.x_lm741.14)    4.6668               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .5898           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.3198           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.3335               
+
+(X_U7.x_lm741.14)    4.3335           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2931               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.1009              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.1009          (X_U10.x_lm741.14)    8.1288              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.6790          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.802E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   6.077E-09
+    X_U3.x_lm741.vc   1.336E-11
+    X_U3.x_lm741.ve   5.050E-13
+    X_U3.x_lm741.vlim  -5.896E-04
+    X_U3.x_lm741.vlp  -4.059E-11
+    X_U3.x_lm741.vln  -3.941E-11
+    X_U4.x_lm741.vb   1.988E-09
+    X_U4.x_lm741.vc   9.249E-12
+    X_U4.x_lm741.ve   4.614E-12
+    X_U4.x_lm741.vlim   9.188E-04
+    X_U4.x_lm741.vlp  -3.908E-11
+    X_U4.x_lm741.vln  -4.092E-11
+    X_U6.x_lm741.vb   2.429E-09
+    X_U6.x_lm741.vc   9.667E-12
+    X_U6.x_lm741.ve   4.196E-12
+    X_U6.x_lm741.vlim   5.898E-04
+    X_U6.x_lm741.vlp  -3.941E-11
+    X_U6.x_lm741.vln  -4.059E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.000E-11
+    X_U7.x_lm741.ve   3.863E-12
+    X_U7.x_lm741.vlim  -2.931E-04
+    X_U7.x_lm741.vlp  -4.029E-11
+    X_U7.x_lm741.vln  -3.971E-11
+    X_U10.x_lm741.vb  -1.501E-05
+    X_U10.x_lm741.vc  -2.584E-02
+    X_U10.x_lm741.ve   1.471E-11
+    X_U10.x_lm741.vlim   4.068E-02
+    X_U10.x_lm741.vlp   1.332E-05
+    X_U10.x_lm741.vln  -8.068E-11
+
+    TOTAL POWER DISSIPATION  -2.63E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        3.720E-21      1.609E-14      1.609E-14  
+         VJ        1.006E+00      5.180E-01      5.180E-01  
+        CJO        0.000E+00      1.681E-11      1.681E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        1.609E-14      2.675E-16      2.675E-16  
+         VJ        5.180E-01      1.006E+00      1.006E+00  
+        CJO        1.681E-11      9.954E-12      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        2.675E-16      2.675E-16      2.675E-16  
+         VJ        1.006E+00      1.006E+00      1.006E+00  
+        CJO        9.954E-12      0.000E+00      9.954E-12  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        2.675E-16      2.675E-16      2.675E-16  
+         VJ        1.006E+00      1.006E+00      1.006E+00  
+        CJO        0.000E+00      9.954E-12      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        2.675E-16      2.675E-16  
+         VJ        1.006E+00      1.006E+00  
+        CJO        9.954E-12      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.156E+00      2.156E+00      2.156E+00  
+        PHI        6.157E-01      6.157E-01      6.157E-01  
+         PB        8.110E-01      8.110E-01      8.110E-01  
+     IS(JS)        3.319E-25      3.319E-25      3.319E-25  
+         KP        5.290E-01      5.290E-01      5.290E-01  
+         UO        6.216E+02      6.216E+02      6.216E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        7.622E-01      7.622E-01      7.622E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        7.622E-01      7.622E-01      7.622E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        2.675E-16      2.675E-16      2.675E-16  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        7.622E-01      7.622E-01      7.622E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        7.622E-01      7.622E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        7.622E-01      7.622E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        2.675E-16      2.675E-16  
+        ISS        0.000E+00      0.000E+00  
+        VJS        7.622E-01      7.622E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      6.480E+09  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        1.297E+00      2.771E-01      6.480E+09  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        1.297E+00      2.771E-01      6.480E+09  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        1.297E+00      2.771E-01  
+
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.8130  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093)    2.1927 (N01002)    4.5682 (N01032)    4.5683 (N01097)    1.5646     
+
+(N01344)    5.7308 (N01606)    5.7309 (N02189)    8.7977 (N02466)     .0023     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)    1.5646 (X_U1.1)    2.1927     
+
+(X_U1.2)    2.1927 (X_U1.3)    2.1923 (X_U1.4)    2.1927 (X_U1.5)    2.1927     
+
+(X_U1.6) 2.478E-06 (X_U1.7) 2.443E-06 (X_U1.8)    0.0000 (X_U1.9)    2.1927     
+
+(X_U2.1)    2.1927 (X_U2.2)    2.1927 (X_U2.3)    5.7304 (X_U2.4)    5.7308     
+
+(X_U2.5)    5.7308 (X_U2.6) 2.478E-06 (X_U2.7) 2.443E-06 (X_U2.8)-423.5E-24     
+
+(X_U2.9)    5.7308 (X_U9.1)   15.8130 (X_U9.2)   15.8130 (X_U9.3) 232.7E-06     
+
+(X_U9.4)     .0023 (X_U9.5)     .0023 (X_U9.6) 11.20E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9)     .0023 (N022410)   14.5080                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-459.3E-06                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12)    3.5376                   (X_U2.13)   11.2570                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.8130                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6) 615.2E-06                
+
+(X_U3.x_lm741.7)    1.5345            (X_U3.x_lm741.8)    1.5345                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6) 200.7E-06                
+
+(X_U4.x_lm741.7)    5.7767            (X_U4.x_lm741.8)    5.7767                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 242.7E-06                
+
+(X_U6.x_lm741.7)    5.3630            (X_U6.x_lm741.8)    5.3630                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9850            (X_U7.x_lm741.8)    4.9850                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5010               
+
+(X_U10.x_lm741.7)   17.8450           (X_U10.x_lm741.8)   17.8450               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.9474               
+
+(X_U3.x_lm741.11)   15.9610           (X_U3.x_lm741.12)   15.9610               
+
+(X_U3.x_lm741.13)    3.9611           (X_U3.x_lm741.14)    3.9611               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)    -.6020           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    5.1098           (X_U4.x_lm741.11)   15.9610               
+
+(X_U4.x_lm741.12)   15.9610           (X_U4.x_lm741.13)    5.1236               
+
+(X_U4.x_lm741.14)    5.1235           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)     .9156               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.7119               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.7256           (X_U6.x_lm741.14)    4.7256               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .6021           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.3786           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.3923               
+
+(X_U7.x_lm741.14)    4.3923           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2921               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.1446              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.1446          (X_U10.x_lm741.14)    8.1725              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.6220          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.800E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   6.152E-09
+    X_U3.x_lm741.vc   1.344E-11
+    X_U3.x_lm741.ve   4.280E-13
+    X_U3.x_lm741.vlim  -6.020E-04
+    X_U3.x_lm741.vlp  -4.060E-11
+    X_U3.x_lm741.vln  -3.940E-11
+    X_U4.x_lm741.vb   2.007E-09
+    X_U4.x_lm741.vc   9.269E-12
+    X_U4.x_lm741.ve   4.594E-12
+    X_U4.x_lm741.vlim   9.156E-04
+    X_U4.x_lm741.vlp  -3.908E-11
+    X_U4.x_lm741.vln  -4.092E-11
+    X_U6.x_lm741.vb   2.427E-09
+    X_U6.x_lm741.vc   9.667E-12
+    X_U6.x_lm741.ve   4.196E-12
+    X_U6.x_lm741.vlim   6.021E-04
+    X_U6.x_lm741.vlp  -3.940E-11
+    X_U6.x_lm741.vln  -4.061E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.000E-11
+    X_U7.x_lm741.ve   3.863E-12
+    X_U7.x_lm741.vlim  -2.921E-04
+    X_U7.x_lm741.vlp  -4.029E-11
+    X_U7.x_lm741.vln  -3.971E-11
+    X_U10.x_lm741.vb  -1.501E-05
+    X_U10.x_lm741.vc  -2.582E-02
+    X_U10.x_lm741.ve   1.468E-11
+    X_U10.x_lm741.vlim   4.062E-02
+    X_U10.x_lm741.vlp   1.333E-05
+    X_U10.x_lm741.vln  -8.063E-11
+
+    TOTAL POWER DISSIPATION  -2.63E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        2.050E-19      1.274E-12      1.274E-12  
+         VJ        9.787E-01      4.404E-01      4.404E-01  
+        CJO        0.000E+00      1.738E-11      1.738E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        1.274E-12      2.118E-14      2.118E-14  
+         VJ        4.404E-01      9.787E-01      9.787E-01  
+        CJO        1.738E-11      1.015E-11      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        2.118E-14      2.118E-14      2.118E-14  
+         VJ        9.787E-01      9.787E-01      9.787E-01  
+        CJO        1.015E-11      0.000E+00      1.015E-11  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        2.118E-14      2.118E-14      2.118E-14  
+         VJ        9.787E-01      9.787E-01      9.787E-01  
+        CJO        0.000E+00      1.015E-11      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        2.118E-14      2.118E-14  
+         VJ        9.787E-01      9.787E-01  
+        CJO        1.015E-11      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.126E+00      2.126E+00      2.126E+00  
+        PHI        5.481E-01      5.481E-01      5.481E-01  
+         PB        7.634E-01      7.634E-01      7.634E-01  
+     IS(JS)        2.698E-23      2.698E-23      2.698E-23  
+         KP        4.571E-01      4.571E-01      4.571E-01  
+         UO        5.371E+02      5.371E+02      5.371E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        7.095E-01      7.095E-01      7.095E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        7.095E-01      7.095E-01      7.095E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        2.118E-14      2.118E-14      2.118E-14  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        7.095E-01      7.095E-01      7.095E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        7.095E-01      7.095E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        7.095E-01      7.095E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        2.118E-14      2.118E-14  
+        ISS        0.000E+00      0.000E+00  
+        VJS        7.095E-01      7.095E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      1.000E-12  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        1.511E+00      3.228E-01      1.000E-12  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        1.511E+00      3.228E-01      1.000E-12  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        1.511E+00      3.228E-01  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.7750  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093) 2.974E-06 (N01002)     .1693 (N01032)    4.2941 (N01097)     .2130     
+
+(N01344) 4.000E-06 (N01606)     .2124 (N02189)    8.7842 (N02466) 11.60E-06     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)     .2130 (X_U1.1) 2.974E-06     
+
+(X_U1.2) 2.974E-06 (X_U1.3) 2.831E-06 (X_U1.4) 2.831E-06 (X_U1.5) 2.974E-06     
+
+(X_U1.6) 2.831E-06 (X_U1.7) 2.831E-06 (X_U1.8)    0.0000 (X_U1.9) 2.831E-06     
+
+(X_U2.1) 2.974E-06 (X_U2.2) 2.974E-06 (X_U2.3) 3.807E-06 (X_U2.4) 3.807E-06     
+
+(X_U2.5) 4.000E-06 (X_U2.6) 3.807E-06 (X_U2.7) 3.807E-06 (X_U2.8)-423.5E-24     
+
+(X_U2.9) 3.807E-06 (X_U9.1)   15.7750 (X_U9.2)   15.7750 (X_U9.3) 11.04E-06     
+
+(X_U9.4) 11.04E-06 (X_U9.5) 11.60E-06 (X_U9.6) 11.04E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)-1.694E-21 (X_U9.9) 11.04E-06 (N022410)   14.4710                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-143.6E-09                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12) 832.5E-09                   (X_U2.13)   22.0000                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.7750                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6)    1.4652                
+
+(X_U3.x_lm741.7)   -1.8150            (X_U3.x_lm741.8)   -1.8150                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6)    1.4285                
+
+(X_U4.x_lm741.7)   -1.8155            (X_U4.x_lm741.8)   -1.8155                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 239.7E-06                
+
+(X_U6.x_lm741.7)    5.3738            (X_U6.x_lm741.8)    5.3738                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 287.0E-06                
+
+(X_U7.x_lm741.7)    4.9850            (X_U7.x_lm741.8)    4.9850                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5013               
+
+(X_U10.x_lm741.7)   17.8030           (X_U10.x_lm741.8)   17.8030               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.7000               
+
+(X_U3.x_lm741.11)   15.9220           (X_U3.x_lm741.12)   16.0000               
+
+(X_U3.x_lm741.13)    3.7272           (X_U3.x_lm741.14)    3.7000               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)  -40.5600           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    -.3804           (X_U4.x_lm741.11)   15.9240               
+
+(X_U4.x_lm741.12)   16.0000           (X_U4.x_lm741.13)    -.3538               
+
+(X_U4.x_lm741.14)    -.3804           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)  -40.5590               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.7715               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.7852           (X_U6.x_lm741.14)    4.7851               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .8181           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.4382           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.4519               
+
+(X_U7.x_lm741.14)    4.4518           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2910               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.1888              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.1888          (X_U10.x_lm741.14)    8.2167              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.5640          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.773E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   1.465E-05
+    X_U3.x_lm741.vc   1.481E-11
+    X_U3.x_lm741.ve  -3.974E-02
+    X_U3.x_lm741.vlim  -4.056E-02
+    X_U3.x_lm741.vlp  -8.058E-11
+    X_U3.x_lm741.vln   1.156E-05
+    X_U4.x_lm741.vb   1.429E-05
+    X_U4.x_lm741.vc   1.481E-11
+    X_U4.x_lm741.ve  -4.059E-02
+    X_U4.x_lm741.vlim  -4.056E-02
+    X_U4.x_lm741.vlp  -8.058E-11
+    X_U4.x_lm741.vln   1.108E-05
+    X_U6.x_lm741.vb   2.397E-09
+    X_U6.x_lm741.vc   9.688E-12
+    X_U6.x_lm741.ve   4.217E-12
+    X_U6.x_lm741.vlim   8.181E-04
+    X_U6.x_lm741.vlp  -3.920E-11
+    X_U6.x_lm741.vln  -4.084E-11
+    X_U7.x_lm741.vb   2.870E-09
+    X_U7.x_lm741.vc   1.002E-11
+    X_U7.x_lm741.ve   3.884E-12
+    X_U7.x_lm741.vlim  -2.910E-04
+    X_U7.x_lm741.vlp  -4.031E-11
+    X_U7.x_lm741.vln  -3.973E-11
+    X_U10.x_lm741.vb  -1.501E-05
+    X_U10.x_lm741.vc  -2.580E-02
+    X_U10.x_lm741.ve   1.466E-11
+    X_U10.x_lm741.vlim   4.056E-02
+    X_U10.x_lm741.vlp   1.333E-05
+    X_U10.x_lm741.vln  -8.059E-11
+
+    TOTAL POWER DISSIPATION  -1.79E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        4.083E-17      4.094E-10      4.094E-10  
+         VJ        9.299E-01      3.083E-01      3.083E-01  
+        CJO        0.000E+00      1.834E-11      1.834E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        4.094E-10      6.808E-12      6.808E-12  
+         VJ        3.083E-01      9.299E-01      9.299E-01  
+        CJO        1.834E-11      1.050E-11      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        6.808E-12      6.808E-12      6.808E-12  
+         VJ        9.299E-01      9.299E-01      9.299E-01  
+        CJO        1.050E-11      0.000E+00      1.050E-11  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        6.808E-12      6.808E-12      6.808E-12  
+         VJ        9.299E-01      9.299E-01      9.299E-01  
+        CJO        0.000E+00      1.050E-11      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        6.808E-12      6.808E-12  
+         VJ        9.299E-01      9.299E-01  
+        CJO        1.050E-11      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.076E+00      2.076E+00      2.076E+00  
+        PHI        4.326E-01      4.326E-01      4.326E-01  
+         PB        6.813E-01      6.813E-01      6.813E-01  
+     IS(JS)        8.866E-21      8.866E-21      8.866E-21  
+         KP        3.684E-01      3.684E-01      3.684E-01  
+         UO        4.328E+02      4.328E+02      4.328E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        6.191E-01      6.191E-01      6.191E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        6.191E-01      6.191E-01      6.191E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        6.808E-12      6.808E-12      6.808E-12  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        6.191E-01      6.191E-01      6.191E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        6.191E-01      6.191E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        6.191E-01      6.191E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        6.808E-12      6.808E-12  
+        ISS        0.000E+00      0.000E+00  
+        VJS        6.191E-01      6.191E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      1.767E-11  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        1.964E+00      4.196E-01      1.767E-11  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        1.964E+00      4.196E-01      1.767E-11  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        1.964E+00      4.196E-01  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.7090  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3329      
+
+(N00093) 2.974E-06 (N01002)     .2202 (N01032)    4.3070 (N01097)     .2769     
+
+(N01344) 4.000E-06 (N01606)     .2763 (N02189)    8.7611 (N02466) 11.60E-06     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)     .2770 (X_U1.1) 2.974E-06     
+
+(X_U1.2) 2.974E-06 (X_U1.3) 2.831E-06 (X_U1.4) 2.831E-06 (X_U1.5) 2.974E-06     
+
+(X_U1.6) 2.831E-06 (X_U1.7) 2.831E-06 (X_U1.8)    0.0000 (X_U1.9) 2.831E-06     
+
+(X_U2.1) 2.974E-06 (X_U2.2) 2.974E-06 (X_U2.3) 3.807E-06 (X_U2.4) 3.807E-06     
+
+(X_U2.5) 4.000E-06 (X_U2.6) 3.807E-06 (X_U2.7) 3.807E-06 (X_U2.8)-423.5E-24     
+
+(X_U2.9) 3.807E-06 (X_U9.1)   15.7090 (X_U9.2)   15.7090 (X_U9.3) 11.04E-06     
+
+(X_U9.4) 11.04E-06 (X_U9.5) 11.60E-06 (X_U9.6) 11.04E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9) 11.04E-06 (N022410)   14.4100                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-143.6E-09                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12) 832.5E-09                   (X_U2.13)   22.0000                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.7090                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6)    1.4661                
+
+(X_U3.x_lm741.7)   -1.7461            (X_U3.x_lm741.8)   -1.7461                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6)    1.4322                
+
+(X_U4.x_lm741.7)   -1.7467            (X_U4.x_lm741.8)   -1.7467                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 239.8E-06                
+
+(X_U6.x_lm741.7)    5.3733            (X_U6.x_lm741.8)    5.3733                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 286.9E-06                
+
+(X_U7.x_lm741.7)    4.9851            (X_U7.x_lm741.8)    4.9851                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5018               
+
+(X_U10.x_lm741.7)   17.7320           (X_U10.x_lm741.8)   17.7320               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.8108               
+
+(X_U3.x_lm741.11)   15.9220           (X_U3.x_lm741.12)   16.0000               
+
+(X_U3.x_lm741.13)    3.8381           (X_U3.x_lm741.14)    3.8108               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)  -40.4610           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    -.2187           (X_U4.x_lm741.11)   15.9240               
+
+(X_U4.x_lm741.12)   16.0000           (X_U4.x_lm741.13)    -.1920               
+
+(X_U4.x_lm741.14)    -.2187           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)  -40.4600               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.8723               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.8861           (X_U6.x_lm741.14)    4.8860               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .8079           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.5391           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.5528               
+
+(X_U7.x_lm741.14)    4.5527           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2893               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.2635              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.2635          (X_U10.x_lm741.14)    8.2914              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.4660          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.769E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   1.466E-05
+    X_U3.x_lm741.vc   2.153E-11
+    X_U3.x_lm741.ve  -3.965E-02
+    X_U3.x_lm741.vlim  -4.046E-02
+    X_U3.x_lm741.vlp  -8.727E-11
+    X_U3.x_lm741.vln   1.158E-05
+    X_U4.x_lm741.vb   1.432E-05
+    X_U4.x_lm741.vc   2.153E-11
+    X_U4.x_lm741.ve  -4.050E-02
+    X_U4.x_lm741.vlim  -4.046E-02
+    X_U4.x_lm741.vlp  -8.727E-11
+    X_U4.x_lm741.vln   1.113E-05
+    X_U6.x_lm741.vb   2.398E-09
+    X_U6.x_lm741.vc   1.647E-11
+    X_U6.x_lm741.ve   1.100E-11
+    X_U6.x_lm741.vlim   8.079E-04
+    X_U6.x_lm741.vlp  -4.600E-11
+    X_U6.x_lm741.vln  -4.762E-11
+    X_U7.x_lm741.vb   2.869E-09
+    X_U7.x_lm741.vc   1.681E-11
+    X_U7.x_lm741.ve   1.067E-11
+    X_U7.x_lm741.vlim  -2.893E-04
+    X_U7.x_lm741.vlp  -4.710E-11
+    X_U7.x_lm741.vln  -4.652E-11
+    X_U10.x_lm741.vb  -1.502E-05
+    X_U10.x_lm741.vc  -2.577E-02
+    X_U10.x_lm741.ve   2.138E-11
+    X_U10.x_lm741.vlim   4.047E-02
+    X_U10.x_lm741.vlp   1.334E-05
+    X_U10.x_lm741.vln  -8.728E-11
+
+    TOTAL POWER DISSIPATION  -1.79E-01  WATTS
+
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  150.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+
+               led_portocaliu    X_U1.DBD       X_U2.DBD    
+
+         IS        2.431E-15      3.528E-08      3.528E-08  
+         VJ        8.781E-01      1.732E-01      1.732E-01  
+        CJO        0.000E+00      1.932E-11      1.932E-11  
+         RS        8.687E+00      1.000E-06      1.000E-06  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                       7.500E+01      7.500E+01  
+
+                  X_U9.DBD    X_U3.x_lm741.dyX_U3.x_lm741.dx
+
+         IS        3.528E-08      5.866E-10      5.866E-10  
+         VJ        1.732E-01      8.781E-01      8.781E-01  
+        CJO        1.932E-11      1.086E-11      0.000E+00  
+         RS        1.000E-06      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV        7.500E+01  
+
+               X_U4.x_lm741.dyX_U4.x_lm741.dxX_U6.x_lm741.dy
+
+         IS        5.866E-10      5.866E-10      5.866E-10  
+         VJ        8.781E-01      8.781E-01      8.781E-01  
+        CJO        1.086E-11      0.000E+00      1.086E-11  
+         RS        1.000E-03      1.000E+00      1.000E-03  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U6.x_lm741.dxX_U7.x_lm741.dyX_U7.x_lm741.dx
+
+         IS        5.866E-10      5.866E-10      5.866E-10  
+         VJ        8.781E-01      8.781E-01      8.781E-01  
+        CJO        0.000E+00      1.086E-11      0.000E+00  
+         RS        1.000E+00      1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00      0.000E+00  
+         BV                   
+
+               X_U10.x_lm741.dy
+                              X_U10.x_lm741.dx
+
+         IS        5.866E-10      5.866E-10  
+         VJ        8.781E-01      8.781E-01  
+        CJO        1.086E-11      0.000E+00  
+         RS        1.000E-03      1.000E+00  
+        IKF        0.000E+00      0.000E+00  
+         BV                   
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                  X_U1.MINT      X_U2.MINT      X_U9.MINT   
+
+        VTO        2.025E+00      2.025E+00      2.025E+00  
+        PHI        3.142E-01      3.142E-01      3.142E-01  
+         PB        5.961E-01      5.961E-01      5.961E-01  
+     IS(JS)        7.681E-19      7.681E-19      7.681E-19  
+         KP        3.050E-01      3.050E-01      3.050E-01  
+         UO        3.584E+02      3.584E+02      3.584E+02  
+
+
+ **** BJT MODEL PARAMETERS
+
+               X_U3.x_lm741.qxX_U4.x_lm741.qxX_U6.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00      0.000E+00  
+        VJE        5.256E-01      5.256E-01      5.256E-01  
+        CJE        0.000E+00      0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00      0.000E+00  
+        VJC        5.256E-01      5.256E-01      5.256E-01  
+        CJC        0.000E+00      0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00      0.000E+00  
+         IS        5.866E-10      5.866E-10      5.866E-10  
+        ISS        0.000E+00      0.000E+00      0.000E+00  
+        VJS        5.256E-01      5.256E-01      5.256E-01  
+        CJS        0.000E+00      0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01      1.000E+01  
+
+               X_U7.x_lm741.qxX_U10.x_lm741.qx
+
+         BF        9.375E+01      9.375E+01  
+        ISE        0.000E+00      0.000E+00  
+        VJE        5.256E-01      5.256E-01  
+        CJE        0.000E+00      0.000E+00  
+         RE        0.000E+00      0.000E+00  
+         RB        0.000E+00      0.000E+00  
+         BR        1.000E+00      1.000E+00  
+        ISC        0.000E+00      0.000E+00  
+        VJC        5.256E-01      5.256E-01  
+        CJC        0.000E+00      0.000E+00  
+         RC        0.000E+00      0.000E+00  
+        RBM        0.000E+00      0.000E+00  
+         IS        5.866E-10      5.866E-10  
+        ISS        0.000E+00      0.000E+00  
+        VJS        5.256E-01      5.256E-01  
+        CJS        0.000E+00      0.000E+00  
+      GAMMA        1.000E-11      1.000E-11  
+        RCO        0.000E+00      0.000E+00  
+         VO        1.000E+01      1.000E+01  
+
+
+ **** RESISTORS
+
+               R_Rref <R_Rref>  R_R3 <R_R3>    R_R4 <R_R4>  
+
+          R        3.900E+04      1.270E+03      4.990E+03  
+
+
+                 R_R1 <R_R1>    R_R2 <R_R2>    R_R7 <R_R7>  
+
+          R        1.270E+03      4.990E+03      2.400E+04  
+
+
+                 R_R6 <R_R6>    R_R8 <R_R8>    R_R9 <R_R9>  
+
+          R        1.300E+04      1.000E+03      1.000E+04  
+
+
+                R_R10 <R_R10>  R_R11 <R_R11>  R_R12 <R_R12> 
+
+          R        2.000E+04      1.000E+04      2.200E+04  
+
+
+                R_R13 <R_R13>   R_R5 <R_R5>   X_U1.RDS < >  
+
+          R        1.000E+04      1.300E+04      1.943E-12  
+
+
+                 X_U1.RD < >   X_U1.RBD < >   X_U2.RDS < >  
+
+          R        2.536E+00      5.418E-01      1.943E-12  
+
+
+                 X_U2.RD < >   X_U2.RBD < >   X_U9.RDS < >  
+
+          R        2.536E+00      5.418E-01      1.943E-12  
+
+
+                 X_U9.RD < >   X_U9.RBD < >                 
+
+          R        2.536E+00      5.418E-01  
+
+
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U1.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U1.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U2.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U2.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+WARNING(ORPSIM-15249): Negative Resistance found for device X_U9.RDS. Resetting to Resistance to 1e-12.
+
+WARNING(ORPSIM-15677): Negative Resistance for device X_U9.RDS, caused by model parameters TC1 = -0.05  and TC2 = 0.
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  150.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   15.6420  (  VCC)   16.0000  ( VCMD)    4.9996  ( VREF)    5.3330      
+
+(N00093) 2.974E-06 (N01002)     .2725 (N01032)    4.3204 (N01097)     .3426     
+
+(N01344) 4.000E-06 (N01606)     .3419 (N02189)    8.7374 (N02466) 11.60E-06     
+
+(N03573)    5.3328 (N04415)    4.9995 (N07237)     .3427 (X_U1.1) 2.974E-06     
+
+(X_U1.2) 2.974E-06 (X_U1.3) 2.831E-06 (X_U1.4) 2.831E-06 (X_U1.5) 2.974E-06     
+
+(X_U1.6) 2.831E-06 (X_U1.7) 2.831E-06 (X_U1.8)    0.0000 (X_U1.9) 2.831E-06     
+
+(X_U2.1) 2.974E-06 (X_U2.2) 2.974E-06 (X_U2.3) 3.807E-06 (X_U2.4) 3.807E-06     
+
+(X_U2.5) 4.000E-06 (X_U2.6) 3.807E-06 (X_U2.7) 3.807E-06 (X_U2.8) 423.5E-24     
+
+(X_U2.9) 3.807E-06 (X_U9.1)   15.6420 (X_U9.2)   15.6420 (X_U9.3) 11.04E-06     
+
+(X_U9.4) 11.04E-06 (X_U9.5) 11.60E-06 (X_U9.6) 11.04E-06 (X_U9.7) 11.04E-06     
+
+(X_U9.8)    0.0000 (X_U9.9) 11.04E-06 (N022410)   14.3480                       
+
+(X_U1.11)    0.0000                   (X_U1.12)-143.6E-09                       
+
+(X_U1.13)   22.0000                   (X_U2.11)    0.0000                       
+
+(X_U2.12) 832.5E-09                   (X_U2.13)   22.0000                       
+
+(X_U9.11)    0.0000                   (X_U9.12)  -15.6420                       
+
+(X_U9.13)   22.0000                   (X_U3.x_lm741.6)    1.4670                
+
+(X_U3.x_lm741.7)   -1.6754            (X_U3.x_lm741.8)   -1.6754                
+
+(X_U3.x_lm741.9)    0.0000            (X_U4.x_lm741.6)    1.4343                
+
+(X_U4.x_lm741.7)   -1.6761            (X_U4.x_lm741.8)   -1.6761                
+
+(X_U4.x_lm741.9)    0.0000            (X_U6.x_lm741.6) 239.9E-06                
+
+(X_U6.x_lm741.7)    5.3728            (X_U6.x_lm741.8)    5.3728                
+
+(X_U6.x_lm741.9)    0.0000            (X_U7.x_lm741.6) 286.9E-06                
+
+(X_U7.x_lm741.7)    4.9852            (X_U7.x_lm741.8)    4.9852                
+
+(X_U7.x_lm741.9)    0.0000            (X_U10.x_lm741.6)   -1.5023               
+
+(X_U10.x_lm741.7)   17.6600           (X_U10.x_lm741.8)   17.6600               
+
+(X_U10.x_lm741.9)    0.0000           (X_U3.x_lm741.10)    3.9238               
+
+(X_U3.x_lm741.11)   15.9220           (X_U3.x_lm741.12)   16.0000               
+
+(X_U3.x_lm741.13)    3.9511           (X_U3.x_lm741.14)    3.9238               
+
+(X_U3.x_lm741.53)   15.0000           (X_U3.x_lm741.54)    1.0000               
+
+(X_U3.x_lm741.90)  -40.3610           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    8.0000               
+
+(X_U4.x_lm741.10)    -.0534           (X_U4.x_lm741.11)   15.9240               
+
+(X_U4.x_lm741.12)   16.0000           (X_U4.x_lm741.13)    -.0267               
+
+(X_U4.x_lm741.14)    -.0534           (X_U4.x_lm741.53)   15.0000               
+
+(X_U4.x_lm741.54)    1.0000           (X_U4.x_lm741.90)  -40.3590               
+
+(X_U4.x_lm741.91)   40.0000           (X_U4.x_lm741.92)  -40.0000               
+
+(X_U4.x_lm741.99)    8.0000           (X_U6.x_lm741.10)    4.9749               
+
+(X_U6.x_lm741.11)   15.9610           (X_U6.x_lm741.12)   15.9610               
+
+(X_U6.x_lm741.13)    4.9887           (X_U6.x_lm741.14)    4.9886               
+
+(X_U6.x_lm741.53)   15.0000           (X_U6.x_lm741.54)    1.0000               
+
+(X_U6.x_lm741.90)     .7974           (X_U6.x_lm741.91)   40.0000               
+
+(X_U6.x_lm741.92)  -40.0000           (X_U6.x_lm741.99)    8.0000               
+
+(X_U7.x_lm741.10)    4.6417           (X_U7.x_lm741.11)   15.9610               
+
+(X_U7.x_lm741.12)   15.9610           (X_U7.x_lm741.13)    4.6554               
+
+(X_U7.x_lm741.14)    4.6553           (X_U7.x_lm741.53)   15.0000               
+
+(X_U7.x_lm741.54)    1.0000           (X_U7.x_lm741.90)    -.2874               
+
+(X_U7.x_lm741.91)   40.0000           (X_U7.x_lm741.92)  -40.0000               
+
+(X_U7.x_lm741.99)    8.0000           (X_U10.x_lm741.10)    8.3393              
+
+(X_U10.x_lm741.11)   16.0000          (X_U10.x_lm741.12)   15.9200              
+
+(X_U10.x_lm741.13)    8.3393          (X_U10.x_lm741.14)    8.3672              
+
+(X_U10.x_lm741.53)   15.0000          (X_U10.x_lm741.54)    1.0000              
+
+(X_U10.x_lm741.90)   40.3660          (X_U10.x_lm741.91)   40.0000              
+
+(X_U10.x_lm741.92)  -40.0000          (X_U10.x_lm741.99)    8.0000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.766E-02
+    X_U1.V11     0.000E+00
+    X_U2.V11     0.000E+00
+    X_U9.V11     0.000E+00
+    X_U3.x_lm741.vb   1.467E-05
+    X_U3.x_lm741.vc   6.012E-10
+    X_U3.x_lm741.ve  -3.956E-02
+    X_U3.x_lm741.vlim  -4.036E-02
+    X_U3.x_lm741.vlp  -6.669E-10
+    X_U3.x_lm741.vln   1.159E-05
+    X_U4.x_lm741.vb   1.434E-05
+    X_U4.x_lm741.vc   6.012E-10
+    X_U4.x_lm741.ve  -4.041E-02
+    X_U4.x_lm741.vlim  -4.036E-02
+    X_U4.x_lm741.vlp  -6.669E-10
+    X_U4.x_lm741.vln   1.116E-05
+    X_U6.x_lm741.vb   2.399E-09
+    X_U6.x_lm741.vc   5.962E-10
+    X_U6.x_lm741.ve   5.908E-10
+    X_U6.x_lm741.vlim   7.974E-04
+    X_U6.x_lm741.vlp  -6.258E-10
+    X_U6.x_lm741.vln  -6.274E-10
+    X_U7.x_lm741.vb   2.869E-09
+    X_U7.x_lm741.vc   5.966E-10
+    X_U7.x_lm741.ve   5.904E-10
+    X_U7.x_lm741.vlim  -2.874E-04
+    X_U7.x_lm741.vlp  -6.268E-10
+    X_U7.x_lm741.vln  -6.263E-10
+    X_U10.x_lm741.vb  -1.502E-05
+    X_U10.x_lm741.vc  -2.573E-02
+    X_U10.x_lm741.ve   6.011E-10
+    X_U10.x_lm741.vlim   4.037E-02
+    X_U10.x_lm741.vlp   1.335E-05
+    X_U10.x_lm741.vln  -6.669E-10
+
+    TOTAL POWER DISSIPATION  -1.78E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 05/22/23 01:53:33 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-time_sim"  [ C:\Users\Catalin24\Desktop\Pop_Catalin_Proiect_CAD\Senzor_Temperatura\pop_catalin_senzor_temper
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       17.95
+  Total job time (using Solver 1)   =        1.73
+

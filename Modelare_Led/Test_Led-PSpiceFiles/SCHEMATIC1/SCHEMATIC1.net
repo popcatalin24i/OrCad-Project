@@ -1,0 +1,3 @@
+* source TEST_LED
+V_V1         N00067 0 1V
+D_D1         N00067 0 led_portocaliu 
